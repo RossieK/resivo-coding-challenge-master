@@ -1,15 +1,15 @@
-import { useState, useCallback, MouseEvent } from 'react';
-import MuiAppBar from '@mui/material/AppBar';
-import Container from '@mui/material/Container';
-import Toolbar from '@mui/material/Toolbar';
-import { AppBarLogo } from '@/ui/layout/AppBarLogo';
-import { XSScreenMenu } from '@/ui/layout/XSScreenMenu';
-import { MDScreenMenu } from '@/ui/layout/MDScreenMenu';
-import { AppBarDate } from '@/ui/layout/AppBarDate';
+import { useState, useCallback, MouseEvent } from "react";
+import MuiAppBar from "@mui/material/AppBar";
+import Container from "@mui/material/Container";
+import Toolbar from "@mui/material/Toolbar";
+import { AppBarLogo } from "@/ui/layout/AppBarLogo";
+import { XSScreenMenu } from "@/ui/layout/XSScreenMenu";
+import { MDScreenMenu } from "@/ui/layout/MDScreenMenu";
+import { AppBarDate } from "@/ui/layout/AppBarDate";
 
 export function AppBar() {
   const [navAnchorElement, setNavAnchorElement] = useState<null | HTMLElement>(
-    null,
+    null
   );
 
   const handleNavMenuOpen = useCallback((event: MouseEvent<HTMLElement>) => {

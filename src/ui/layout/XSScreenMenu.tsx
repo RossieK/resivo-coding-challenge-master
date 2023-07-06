@@ -1,9 +1,9 @@
-import { MouseEvent } from 'react';
-import Box from '@mui/material/Box';
-import IconButton from '@mui/material/IconButton';
-import Menu from '@mui/material/Menu';
-import MenuIcon from '@mui/icons-material/Menu';
-import { NavBarMenuItem } from '@/ui/layout/NavBarMenuItem';
+import { MouseEvent } from "react";
+import Box from "@mui/material/Box";
+import IconButton from "@mui/material/IconButton";
+import Menu from "@mui/material/Menu";
+import MenuIcon from "@mui/icons-material/Menu";
+import { NavBarMenuItem } from "@/ui/layout/NavBarMenuItem";
 
 interface XSScreenMenuProps {
   navAnchorElement: null | HTMLElement;
@@ -17,7 +17,7 @@ export function XSScreenMenu({
   navAnchorElement,
 }: XSScreenMenuProps) {
   return (
-    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+    <Box sx={{ flexGrow: 1, display: { xs: "flex", md: "none" } }}>
       <IconButton
         size="large"
         aria-label="menu button"
@@ -31,18 +31,18 @@ export function XSScreenMenu({
         id="menu-appbar"
         anchorEl={navAnchorElement}
         anchorOrigin={{
-          vertical: 'bottom',
-          horizontal: 'left',
+          vertical: "bottom",
+          horizontal: "left",
         }}
         keepMounted
         transformOrigin={{
-          vertical: 'top',
-          horizontal: 'left',
+          vertical: "top",
+          horizontal: "left",
         }}
         open={Boolean(navAnchorElement)}
         onClose={onNavMenuClose}
         sx={{
-          display: { xs: 'block', md: 'none' },
+          display: { xs: "block", md: "none" },
         }}
       >
         <NavBarMenuItem onClick={onNavMenuClose} label="Doors" href="/doors" />

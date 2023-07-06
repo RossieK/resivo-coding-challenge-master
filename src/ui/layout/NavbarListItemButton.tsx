@@ -1,7 +1,7 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import ListItemButton from '@mui/material/ListItemButton';
-import Typography from '@mui/material/Typography';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import ListItemButton from "@mui/material/ListItemButton";
+import Typography from "@mui/material/Typography";
 
 interface NavbarListItemButtonProps {
   label: string;
@@ -17,7 +17,7 @@ export function NavbarListItemButton({
   return (
     <ListItemButton
       selected={pathname === href}
-      sx={{ color: 'common.black', mr: 2, flexGrow: 'initial' }}
+      sx={{ color: "common.black", mr: 2, flexGrow: "initial" }}
       LinkComponent={Link}
       href={href}
     >

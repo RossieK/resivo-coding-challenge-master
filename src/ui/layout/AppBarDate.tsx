@@ -1,6 +1,6 @@
-import { useState, useEffect } from 'react';
-import Typography from '@mui/material/Typography';
-import { getLocaleString, DateTime } from '@/lib/dateTime';
+import { useState, useEffect } from "react";
+import Typography from "@mui/material/Typography";
+import { getLocaleString, DateTime } from "@/lib/dateTime";
 
 export function AppBarDate() {
   const [currentDate, setCurrentDate] = useState<string | undefined>();
@@ -13,6 +13,6 @@ export function AppBarDate() {
   }, []);
 
   return (
-    <Typography sx={{ ml: 2, color: 'common.black' }}>{currentDate}</Typography>
+    <Typography sx={{ ml: 2, color: "common.black" }}>{currentDate}</Typography>
   );
 }

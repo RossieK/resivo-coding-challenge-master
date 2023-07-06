@@ -1,11 +1,11 @@
-import createHttpError from 'http-errors';
+import createHttpError from "http-errors";
 
 export function assertApiQueryParamIsString(
-  queryParam: string | string[] | undefined,
+  queryParam: string | string[] | undefined
 ): asserts queryParam is string {
-  if (typeof queryParam !== 'string') {
+  if (typeof queryParam !== "string") {
     throw new createHttpError.BadRequest(
-      `query parameter ${queryParam} is not a string`,
+      `query parameter ${queryParam} is not a string`
     );
   }
 }

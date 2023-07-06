@@ -1,6 +1,6 @@
-import { injectable } from 'tsyringe';
-import { BuildingDto } from '@/__mocks__/dtos/BuidlingDto';
-import { buildings } from '@/__mocks__/buildings';
+import { injectable } from "tsyringe";
+import { BuildingDto } from "@/__mocks__/dtos/BuidlingDto";
+import { buildings } from "@/__mocks__/buildings";
 
 @injectable()
 export class BuildingRepository {

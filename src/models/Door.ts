@@ -1,5 +1,5 @@
-import { ConnectionType } from './ConnectionType';
-import { ConnectionStatus } from './ConnectionStatus';
+import { ConnectionType } from "./ConnectionType";
+import { ConnectionStatus } from "./ConnectionStatus";
 
 export interface Door {
   id: string;

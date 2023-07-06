@@ -1,7 +1,7 @@
-import axios, { AxiosHeaders, AxiosInstance } from 'axios';
-import { singleton } from 'tsyringe';
-import { apiBaseUrl } from '@/lib/config';
-import { HttpClient } from '@/server/lib/HttpClient';
+import axios, { AxiosHeaders, AxiosInstance } from "axios";
+import { singleton } from "tsyringe";
+import { apiBaseUrl } from "@/lib/config";
+import { HttpClient } from "@/server/lib/HttpClient";
 
 @singleton()
 export class AxiosAdapter implements HttpClient {
@@ -30,6 +30,6 @@ export class AxiosAdapter implements HttpClient {
   }
 
   private getAxiosHeaders() {
-    return new AxiosHeaders().set('content-type', 'application/json');
+    return new AxiosHeaders().set("content-type", "application/json");
   }
 }

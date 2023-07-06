@@ -1,13 +1,13 @@
-import { createTheme } from '@mui/material/styles';
-import { common } from '@mui/material/colors';
-import { gridClasses } from '@mui/x-data-grid';
-import type {} from '@mui/x-data-grid/themeAugmentation';
+import { createTheme } from "@mui/material/styles";
+import { common } from "@mui/material/colors";
+import { gridClasses } from "@mui/x-data-grid";
+import type {} from "@mui/x-data-grid/themeAugmentation";
 
 export const theme = createTheme({
   components: {
     MuiContainer: {
       defaultProps: {
-        maxWidth: 'xl',
+        maxWidth: "xl",
       },
     },
     MuiAppBar: {
@@ -21,7 +21,7 @@ export const theme = createTheme({
       styleOverrides: {
         root: {
           [`& .${gridClasses.row}:hover`]: {
-            cursor: 'pointer',
+            cursor: "pointer",
           },
         },
       },

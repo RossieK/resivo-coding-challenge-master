@@ -1,6 +1,6 @@
 export const ConnectionStatus = {
-  Online: 'online',
-  Offline: 'offline',
+  Online: "online",
+  Offline: "offline",
 } as const;
 
 export type ConnectionStatus =

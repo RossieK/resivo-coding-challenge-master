@@ -1,6 +1,6 @@
-import { injectable } from 'tsyringe';
-import { DoorDto } from '@/__mocks__/dtos/DoorDto';
-import { doors } from '@/__mocks__/doors';
+import { injectable } from "tsyringe";
+import { DoorDto } from "@/__mocks__/dtos/DoorDto";
+import { doors } from "@/__mocks__/doors";
 
 @injectable()
 export class DoorRepository {

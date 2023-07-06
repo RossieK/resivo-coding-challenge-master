@@ -1,8 +1,8 @@
-import { NextApiHandler, NextApiRequest, NextApiResponse } from 'next';
-import createHttpError from 'http-errors';
-import { HttpStatus } from '@/server/lib/HttpStatus';
+import { NextApiHandler, NextApiRequest, NextApiResponse } from "next";
+import createHttpError from "http-errors";
+import { HttpStatus } from "@/server/lib/HttpStatus";
 
-type ApiMethod = 'GET' | 'POST' | 'PUT' | 'DELETE';
+type ApiMethod = "GET" | "POST" | "PUT" | "DELETE";
 
 export interface ErrorResponse {
   error: {
@@ -15,22 +15,22 @@ export interface ErrorResponse {
 export class ApiHandler {
   private apiMethodMap: Partial<Record<ApiMethod, NextApiHandler>> = {};
 
-  public readonly get = this.addHandlerMethod('GET');
-  public readonly post = this.addHandlerMethod('POST');
-  public readonly put = this.addHandlerMethod('PUT');
-  public readonly delete = this.addHandlerMethod('DELETE');
+  public readonly get = this.addHandlerMethod("GET");
+  public readonly post = this.addHandlerMethod("POST");
+  public readonly put = this.addHandlerMethod("PUT");
+  public readonly delete = this.addHandlerMethod("DELETE");
 
   public getHandler() {
     return async (
       request: NextApiRequest,
-      response: NextApiResponse<ErrorResponse>,
+      response: NextApiResponse<ErrorResponse>
     ) => {
       await this.handleMethod(request, response);
     };
   }
 
   private addHandlerMethod(
-    method: ApiMethod,
+    method: ApiMethod
   ): (handler: NextApiHandler) => ApiHandler {
     return (handler: NextApiHandler) => {
       this.apiMethodMap[method] = handler;
@@ -41,7 +41,7 @@ export class ApiHandler {
 
   private handleError(
     error: unknown,
-    response: NextApiResponse<ErrorResponse>,
+    response: NextApiResponse<ErrorResponse>
   ) {
     if (createHttpError.isHttpError(error) && error.expose) {
       return response
@@ -50,7 +50,7 @@ export class ApiHandler {
     }
 
     return response.status(HttpStatus.InternalServerError).json({
-      error: { message: 'Internal Server Error', error },
+      error: { message: "Internal Server Error", error },
       status: createHttpError.isHttpError(error)
         ? error.statusCode
         : HttpStatus.InternalServerError,
@@ -59,21 +59,21 @@ export class ApiHandler {
 
   private async handleMethod(
     request: NextApiRequest,
-    response: NextApiResponse<ErrorResponse>,
+    response: NextApiResponse<ErrorResponse>
   ) {
     try {
       if (!request.method) {
         throw new createHttpError.MethodNotAllowed(
-          `no method specified on path ${request.url}!`,
+          `no method specified on path ${request.url}!`
         );
       }
 
       const method = request.method.toUpperCase();
       const handleRequest = this.apiMethodMap[method as ApiMethod];
 
-      if (typeof handleRequest !== 'function') {
+      if (typeof handleRequest !== "function") {
         throw new createHttpError.MethodNotAllowed(
-          `method ${method} not allowed on path ${request.url}!`,
+          `method ${method} not allowed on path ${request.url}!`
         );
       }
 

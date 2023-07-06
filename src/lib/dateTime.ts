@@ -1,16 +1,16 @@
-import { DateTime, DateTimeFormatOptions } from 'luxon';
+import { DateTime, DateTimeFormatOptions } from "luxon";
 
 /**
  * get luxon DateTime either by JS Date object or ISO string
  */
 export const getDateTimeByJSDateOrISO = (
-  date?: Date | string | null,
+  date?: Date | string | null
 ): DateTime | undefined => {
   if (!date) {
     return undefined;
   }
 
-  if (typeof date === 'string') {
+  if (typeof date === "string") {
     return DateTime.fromISO(date);
   }
 
@@ -22,7 +22,7 @@ export const getDateTimeByJSDateOrISO = (
  */
 export const getLocaleString = (
   date?: Date | string | null,
-  format: DateTimeFormatOptions = DateTime.DATETIME_SHORT,
+  format: DateTimeFormatOptions = DateTime.DATETIME_SHORT
 ): string | undefined => {
   const dateTime = getDateTimeByJSDateOrISO(date);
 

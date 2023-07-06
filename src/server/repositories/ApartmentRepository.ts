@@ -1,6 +1,6 @@
-import { injectable } from 'tsyringe';
-import { ApartmentDto } from '@/__mocks__/dtos/ApartmentDto';
-import { apartments } from '@/__mocks__/apartments';
+import { injectable } from "tsyringe";
+import { ApartmentDto } from "@/__mocks__/dtos/ApartmentDto";
+import { apartments } from "@/__mocks__/apartments";
 
 @injectable()
 export class ApartmentRepository {

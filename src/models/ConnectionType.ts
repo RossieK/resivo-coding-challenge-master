@@ -1,6 +1,6 @@
 export const ConnectionType = {
-  Wired: 'wired',
-  Wireless: 'wireless',
+  Wired: "wired",
+  Wireless: "wireless",
 } as const;
 
 export type ConnectionType =

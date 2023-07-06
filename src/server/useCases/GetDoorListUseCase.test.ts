@@ -1,10 +1,10 @@
-import { container } from 'tsyringe';
-import { HttpError } from 'http-errors';
-import { DoorRepository } from '@/server/repositories/DoorRepository';
-import { BuildingRepository } from '@/server/repositories/BuildingRepository';
-import { GetDoorListUseCase } from './GetDoorListUseCase';
+import { container } from "tsyringe";
+import { HttpError } from "http-errors";
+import { DoorRepository } from "@/server/repositories/DoorRepository";
+import { BuildingRepository } from "@/server/repositories/BuildingRepository";
+import { GetDoorListUseCase } from "./GetDoorListUseCase";
 
-describe('GetDoorListUseCase', () => {
+describe("GetDoorListUseCase", () => {
   let getDoorListUseCase: GetDoorListUseCase;
 
   beforeEach(() => {
@@ -12,13 +12,13 @@ describe('GetDoorListUseCase', () => {
     getDoorListUseCase = container.resolve(GetDoorListUseCase);
   });
 
-  it('should call repository methods', async () => {
+  it("should call repository methods", async () => {
     const getAllDoorsSpy = jest
-      .spyOn(DoorRepository.prototype, 'getAllDoors')
+      .spyOn(DoorRepository.prototype, "getAllDoors")
       .mockImplementation(() => Promise.resolve([]));
 
     const getAllBuildingsSpy = jest
-      .spyOn(BuildingRepository.prototype, 'getAllBuildings')
+      .spyOn(BuildingRepository.prototype, "getAllBuildings")
       .mockImplementation(() => Promise.resolve([]));
 
     await getDoorListUseCase.execute();
@@ -27,13 +27,13 @@ describe('GetDoorListUseCase', () => {
     expect(getAllBuildingsSpy).toHaveBeenCalledTimes(1);
   });
 
-  it('should throw if getAllBuildings request fails', async () => {
+  it("should throw if getAllBuildings request fails", async () => {
     const getAllDoorsSpy = jest
-      .spyOn(DoorRepository.prototype, 'getAllDoors')
+      .spyOn(DoorRepository.prototype, "getAllDoors")
       .mockImplementation(() => Promise.resolve([]));
 
     const getAllBuildingsSpy = jest
-      .spyOn(BuildingRepository.prototype, 'getAllBuildings')
+      .spyOn(BuildingRepository.prototype, "getAllBuildings")
       .mockImplementation(() => {
         throw new Error();
       });

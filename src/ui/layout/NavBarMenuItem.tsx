@@ -1,8 +1,8 @@
-import { useRouter } from 'next/router';
-import Link from 'next/link';
-import { MouseEventHandler } from 'react';
-import MenuItem from '@mui/material/MenuItem';
-import Typography from '@mui/material/Typography';
+import { useRouter } from "next/router";
+import Link from "next/link";
+import { MouseEventHandler } from "react";
+import MenuItem from "@mui/material/MenuItem";
+import Typography from "@mui/material/Typography";
 
 interface NavBarMenuItemProps {
   label: string;

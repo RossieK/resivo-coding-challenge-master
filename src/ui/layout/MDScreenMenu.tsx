@@ -1,5 +1,5 @@
-import List from '@mui/material/List';
-import { NavbarListItemButton } from '@/ui/layout/NavbarListItemButton';
+import List from "@mui/material/List";
+import { NavbarListItemButton } from "@/ui/layout/NavbarListItemButton";
 
 interface MDScreenMenuProps {
   onNavMenuClose: () => void;
@@ -10,8 +10,8 @@ export function MDScreenMenu({ onNavMenuClose }: MDScreenMenuProps) {
     <List
       onClick={onNavMenuClose}
       sx={{
-        display: { xs: 'none', md: 'flex' },
-        flexDirection: 'row',
+        display: { xs: "none", md: "flex" },
+        flexDirection: "row",
         flexGrow: 1,
       }}
     >

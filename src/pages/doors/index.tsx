@@ -1,7 +1,7 @@
-import Head from 'next/head';
-import { useGetAllDoorsQuery } from '@/ui/apiSlice';
-import { DoorList } from '@/ui/components/DoorList';
-import { Layout } from '@/ui/layout/Layout';
+import Head from "next/head";
+import { useGetAllDoorsQuery } from "@/ui/apiSlice";
+import { DoorList } from "@/ui/components/DoorList";
+import { Layout } from "@/ui/layout/Layout";
 
 export default function DoorListPage() {
   const { data: doors = [], isSuccess } = useGetAllDoorsQuery();

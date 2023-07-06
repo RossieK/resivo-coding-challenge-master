@@ -1,7 +1,7 @@
-import { PropsWithChildren } from 'react';
-import Container from '@mui/material/Container';
-import Typography from '@mui/material/Typography';
-import { AppBar } from '@/ui/layout/AppBar';
+import { PropsWithChildren } from "react";
+import Container from "@mui/material/Container";
+import Typography from "@mui/material/Typography";
+import { AppBar } from "@/ui/layout/AppBar";
 
 interface LayoutProps {
   title?: string;
