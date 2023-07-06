@@ -12,6 +12,13 @@ const buildingDto: BuildingDto = {
   city: "Zurich",
 };
 
+const apartmentDto: ApartmentDto = {
+  id: "63f4e2825abc011556da74af",
+  name: "Apartment 1.1",
+  floor: 1,
+  building_id: buildingDto.id,
+};
+
 const doorDto: DoorDto = {
   id: "63f4d82ef04826419cc6eaeb",
   name: "Building Main Entrance",
@@ -19,13 +26,7 @@ const doorDto: DoorDto = {
   connection_status: "online",
   last_connection_status_update: "2023-02-22T02:38:40.374Z",
   building_id: buildingDto.id,
-};
-
-const apartmentDto: ApartmentDto = {
-  id: "63f4e2825abc011556da74af",
-  name: "Apartment 1.1",
-  floor: 1,
-  building_id: buildingDto.id,
+  apartment_id: apartmentDto.id,
 };
 
 describe("DoorMapper", () => {
