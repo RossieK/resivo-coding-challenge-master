@@ -1,5 +1,6 @@
 import { BuildingDto } from "@/__mocks__/dtos/BuidlingDto";
 import { DoorDto } from "@/__mocks__/dtos/DoorDto";
+import { ApartmentDto } from "@/__mocks__/dtos/ApartmentDto";
 import { Door } from "@/models/Door";
 import { DoorMapper } from "./DoorMapper";
 
@@ -20,6 +21,13 @@ const doorDto: DoorDto = {
   building_id: buildingDto.id,
 };
 
+const apartmentDto: ApartmentDto = {
+  id: "63f4e2825abc011556da74af",
+  name: "Apartment 1.1",
+  floor: 1,
+  building_id: buildingDto.id,
+};
+
 describe("DoorMapper", () => {
   let doorMapper: DoorMapper;
 
@@ -28,14 +36,21 @@ describe("DoorMapper", () => {
   });
 
   it("should map dto to Door model", () => {
-    const door = doorMapper.toDomain(doorDto, {
-      [buildingDto.id]: buildingDto,
-    });
+    const door = doorMapper.toDomain(
+      doorDto,
+      {
+        [buildingDto.id]: buildingDto,
+      },
+      {
+        [apartmentDto.id]: apartmentDto,
+      }
+    );
 
     expect(door).toMatchObject<Door>({
       id: doorDto.id,
       name: doorDto.name,
       buildingName: `${buildingDto.street} ${buildingDto.street_no}`,
+      apartmentName: apartmentDto.name,
       connectionType: doorDto.connection_type,
       connectionStatus: doorDto.connection_status,
       lastConnectionStatusUpdate: doorDto.last_connection_status_update,
@@ -43,12 +58,13 @@ describe("DoorMapper", () => {
   });
 
   it('should set building name to "n/a" if no matching building is found', () => {
-    const door = doorMapper.toDomain(doorDto, {});
+    const door = doorMapper.toDomain(doorDto, {}, {});
 
     expect(door).toMatchObject<Door>({
       id: doorDto.id,
       name: doorDto.name,
       buildingName: "n/a",
+      apartmentName: "n/a",
       connectionType: doorDto.connection_type,
       connectionStatus: doorDto.connection_status,
       lastConnectionStatusUpdate: doorDto.last_connection_status_update,
