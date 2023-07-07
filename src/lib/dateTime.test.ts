@@ -23,29 +23,29 @@ describe("dateTime", () => {
 
   describe("getLocaleString", () => {
     it("should handle Date object and return formatted short date string", () => {
-      const date = new Date("2023-02-12T14:30:20.124");
-      const formattedDate = getLocaleString(date, DateTime.DATE_SHORT);
+      const date = DateTime.fromISO("2023-02-12T14:30:20.124");
+      const formattedDate = date.toLocaleString(DateTime.DATE_SHORT);
 
       expect(formattedDate).toEqual("12.2.2023");
     });
 
     it("should handle Date object and return formatted short time string", () => {
-      const date = new Date("2023-02-12T14:30:20.124");
-      const formattedDate = getLocaleString(date, DateTime.TIME_SIMPLE);
+      const date = DateTime.fromISO("2023-02-12T14:30:20.124");
+      const formattedDate = date.toLocaleString(DateTime.TIME_SIMPLE);
 
       expect(formattedDate).toEqual("14:30");
     });
 
     it("should handle Date object and return formatted short date and time string", () => {
-      const date = new Date("2023-02-12T14:30:20.124");
-      const formattedDate = getLocaleString(date, DateTime.DATETIME_SHORT);
+      const date = DateTime.fromISO("2023-02-12T14:30:20.124");
+      const formattedDate = date.toLocaleString(DateTime.DATETIME_SHORT);
 
       expect(formattedDate).toEqual("12.2.2023, 14:30");
     });
 
     it("should handle Date object and return formatted short date and time string by default", () => {
-      const date = new Date("2023-02-12T14:30:20.124");
-      const formattedDate = getLocaleString(date);
+      const date = DateTime.fromISO("2023-02-12T14:30:20.124");
+      const formattedDate = date.toLocaleString(DateTime.DATETIME_SHORT);
 
       expect(formattedDate).toEqual("12.2.2023, 14:30");
     });
