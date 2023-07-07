@@ -1,4 +1,5 @@
 import Typography from "@mui/material/Typography";
+import { DateTime } from "luxon";
 import { Door } from "@/models/Door";
 import { DetailPageContainer } from "@/ui/layout/DetailPageContainer";
 import { DetailPageItem } from "@/ui/layout/DetailPageItem";
@@ -29,6 +30,13 @@ export function DoorDetail({ door }: DoorDetailProps) {
           }
         >
           {door.connectionStatus}
+        </Typography>
+      </DetailPageItem>
+      <DetailPageItem label="Last connection status update">
+        <Typography>
+          {DateTime.fromISO(door.lastConnectionStatusUpdate).toLocaleString(
+            DateTime.DATETIME_FULL
+          )}
         </Typography>
       </DetailPageItem>
     </DetailPageContainer>

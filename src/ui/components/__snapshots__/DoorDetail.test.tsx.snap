@@ -48,7 +48,9 @@ exports[`DoorDetail should render correctly 1`] = `
     </p>
     <p
       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
-    />
+    >
+      Main Entrance
+    </p>
   </div>
   <div
     class="MuiBox-root css-0"
@@ -77,9 +79,25 @@ exports[`DoorDetail should render correctly 1`] = `
       </strong>
     </p>
     <p
-      class="MuiTypography-root MuiTypography-body1 css-18todbp-MuiTypography-root"
+      class="MuiTypography-root MuiTypography-body1 css-1oykq5t-MuiTypography-root"
     >
-      online
+      offline
+    </p>
+  </div>
+  <div
+    class="MuiBox-root css-0"
+  >
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      <strong>
+        Last connection status update
+      </strong>
+    </p>
+    <p
+      class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
+    >
+      September 8, 2021, 3:00 PM GMT+3
     </p>
   </div>
 </div>

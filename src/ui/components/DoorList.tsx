@@ -1,7 +1,8 @@
 import { useRouter } from "next/router";
 import { useCallback } from "react";
-import { Door } from "@/models/Door";
+import { DateTime } from "luxon";
 import { DataGrid, GridColDef, GridRowParams } from "@mui/x-data-grid";
+import { Door } from "@/models/Door";
 import Typography from "@mui/material/Typography";
 
 interface DoorListProps {
@@ -42,6 +43,16 @@ const columns: GridColDef<Door>[] = [
         >
           {door.connectionStatus}
         </Typography>
+      );
+    },
+  },
+  {
+    field: "lastConnectionStatusUpdate",
+    headerName: "Last connection status update",
+    flex: 1,
+    renderCell: ({ row: door }) => {
+      return DateTime.fromISO(door.lastConnectionStatusUpdate).toLocaleString(
+        DateTime.DATETIME_MED
       );
     },
   },
