@@ -97,7 +97,7 @@ exports[`DoorDetail should render correctly 1`] = `
     <p
       class="MuiTypography-root MuiTypography-body1 css-ahj2mt-MuiTypography-root"
     >
-      September 8, 2021, 3:00 PM GMT+3
+      Sep 8, 2021, 3:00 PM
     </p>
   </div>
 </div>

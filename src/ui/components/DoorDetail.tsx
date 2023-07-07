@@ -35,7 +35,7 @@ export function DoorDetail({ door }: DoorDetailProps) {
       <DetailPageItem label="Last connection status update">
         <Typography>
           {DateTime.fromISO(door.lastConnectionStatusUpdate).toLocaleString(
-            DateTime.DATETIME_FULL
+            DateTime.DATETIME_MED
           )}
         </Typography>
       </DetailPageItem>
